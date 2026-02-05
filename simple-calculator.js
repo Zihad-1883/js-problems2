@@ -16,21 +16,34 @@ function divide(num1,num2){
 
 
 function calculator(a,b,operation){
-    if(operation === 'add'){
-        return add(a,b);
+   
+    if(typeof a !== 'number' || typeof b !== 'number'){
+        console.log('Please provide valid numbers');
     }
-    else if(operation === 'subtract'){
-        return subtract(a,b);
+
+    else if(typeof operation !== 'string'){
+        console.log("Please provide a valid operation name. Only 'add', 'subtarct', 'multiply' and 'divide' is allowed")
     }
-    else if(operation === 'multiply'){
-        return multiply(a,b);
-    }
-    else if(operation === 'divide'){
-        return divide(a,b);
-    }
+
     else{
-        return "Only 'add', 'subtarct', 'multiply' and 'divide' is allowed";
+
+        if(operation === 'add'){
+            return add(a,b);
+        }
+        else if(operation === 'subtract'){
+            return subtract(a,b);
+        }
+        else if(operation === 'multiply'){
+            return multiply(a,b);
+        }
+        else if(operation === 'divide'){
+            return divide(a,b);
+        }
+        else{
+            return "Please provide a valid operation name. Only 'add', 'subtarct', 'multiply' and 'divide' is allowed";
+        }
     }
+ 
 }
 
-console.log(calculator(4,2,'divide'));
+console.log(calculator(2,2,'divide'));
